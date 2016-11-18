@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CircleImageView">
+        <attr name="civ_border_width" format="dimension" />
+        <attr name="civ_border_color" format="color" />
+        <attr name="civ_border_overlay" format="boolean" />
+        <attr name="civ_fill_color" format="color" />
+    </declare-styleable>
+</resources>
+
+   <!--
+http://blog.csdn.net/congqingbin/article/details/7869730
+   declare-styleable 自定义控件属性
+   name 为属性集的名字
+
+   reference:参考指定Theme中资源ID
+   color: 颜色
+   boolean: 布尔型
+   dimension:尺寸值
+   float:浮点型
+   integer:整型
+   fraction:百分数
+   enum:枚举
+   flag:位或运算
+
+   <attr name="testEnum">
+    <enum name="fill_parent" value="-1"/>
+    <enum name="wrap_content" value="-2"/>
+</attr>
+
+   如果该属性可同时传两种不同的属性 则可以用"|"分割开
+
+
+     -->
