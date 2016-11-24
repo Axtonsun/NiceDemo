@@ -5,7 +5,7 @@ android {
     buildToolsVersion "25.0.0"
     defaultConfig {
         applicationId "com.example.axtonsun.nicedemo"
-        minSdkVersion 17
+        minSdkVersion 21
         targetSdkVersion 24
         versionCode 1
         versionName "1.0"
@@ -33,4 +33,6 @@ dependencies {
     compile 'io.reactivex:rxjava:1.2.2'
     compile 'io.reactivex:rxandroid:1.2.1'
     compile 'com.github.bumptech.glide:glide:3.7.0'
+    compile 'me.imid.swipebacklayout.lib:library:1.0.0'
+    compile 'com.android.support:palette-v7:24.0.0'
 }

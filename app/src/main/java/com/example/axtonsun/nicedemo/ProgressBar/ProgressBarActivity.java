@@ -1,4 +1,4 @@
-package com.example.axtonsun.nicedemo;
+package com.example.axtonsun.nicedemo.ProgressBar;
 
 import android.animation.ObjectAnimator;
 import android.support.v7.app.AppCompatActivity;
@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import com.example.axtonsun.nicedemo.R;
 
 public class ProgressBarActivity extends AppCompatActivity implements View.OnClickListener{
 

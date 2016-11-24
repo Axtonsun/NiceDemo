@@ -17,9 +17,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ProgressBarActivity" />
+        <activity android:name=".ProgressBar.ProgressBarActivity" />
         <activity android:name=".SuspensionBar.RvSuspensionBar" />
-        <activity android:name=".MVP.MvpActivity"></activity>
+        <activity android:name=".MVP.MvpActivity" />
+        <activity android:name=".TabLayoutTop.TabLayoutTopActivity" />
+        <activity android:name=".Palette.PaletteActivity" />
+        <activity android:name=".XituActivity.XiTuActivity"></activity>
     </application>
 
 </manifest>

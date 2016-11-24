@@ -6,6 +6,13 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-    </style>
 
+        <!-- 底部导航栏颜色 -->
+        <item name="android:navigationBarColor">#4876FF</item>
+    </style>
+    <style name="OverFlowMenuTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:actionMenuTextColor">@color/white</item>
+        <item name="android:textColorSecondary">@color/white</item>
+        <item name="overlapAnchor">false</item>
+    </style>
 </resources>

@@ -25,12 +25,22 @@
     <Button
         android:id="@+id/main_btn3"
         android:text="MVP+Retrofit+RxJava"
+        android:textAllCaps="false"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
     <Button
         android:id="@+id/main_btn4"
-        android:text="XXX"
+        android:text="TabLayouTop"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
-
+    <Button
+        android:id="@+id/main_btn5"
+        android:text="Palette"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/main_btn6"
+        android:text="仿稀土"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 </LinearLayout>

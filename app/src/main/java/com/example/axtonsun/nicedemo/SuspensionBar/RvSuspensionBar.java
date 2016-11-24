@@ -53,6 +53,9 @@ public class RvSuspensionBar extends AppCompatActivity {
                 //dy < 0 时为手指向下滚动,列表滚动显示上面的内容
                 Log.e("AAA", "onScrolled: " + dx + "\\" + dy );
 
+                //getChildCount() 当前可见的item个数
+                Log.e("SSSS", "onScrolled: "+  linearLayoutManager.getChildCount()+ "||"+ linearLayoutManager.findFirstVisibleItemPosition()+ "||" + linearLayoutManager.getItemCount());
+
                 View view = linearLayoutManager.findViewByPosition(mCurrentPosition + 1);//获取指定位置的Item View
                 //View.getY()获取到的值为 相对于父视图而言的上边缘的距离  ==》getTop + getTranslationY
 
