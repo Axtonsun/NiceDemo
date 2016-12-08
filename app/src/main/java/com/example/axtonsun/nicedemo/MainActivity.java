@@ -1,5 +1,6 @@
 package com.example.axtonsun.nicedemo;
 
+import android.app.ActivityOptions;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -7,10 +8,12 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.axtonsun.nicedemo.MVP.MvpActivity;
+import com.example.axtonsun.nicedemo.Notification.NotifiActivity;
 import com.example.axtonsun.nicedemo.Palette.PaletteActivity;
 import com.example.axtonsun.nicedemo.ProgressBar.ProgressBarActivity;
 import com.example.axtonsun.nicedemo.SuspensionBar.RvSuspensionBar;
 import com.example.axtonsun.nicedemo.TabLayoutTop.TabLayoutTopActivity;
+import com.example.axtonsun.nicedemo.TransActivity.TransA;
 import com.example.axtonsun.nicedemo.XituActivity.XiTuActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
@@ -21,6 +24,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button mBtn4;
     private Button mBtn5;
     private Button mBtn6;
+    private Button mBtn7;
+    private Button mBtn8;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +37,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mBtn4 = (Button) findViewById(R.id.main_btn4);
         mBtn5 = (Button) findViewById(R.id.main_btn5);
         mBtn6 = (Button) findViewById(R.id.main_btn6);
+        mBtn7 = (Button) findViewById(R.id.main_btn7);
+        mBtn8 = (Button) findViewById(R.id.main_btn8);
+
+        mBtn8.setOnClickListener(this);
+        mBtn7.setOnClickListener(this);
         mBtn6.setOnClickListener(this);
         mBtn5.setOnClickListener(this);
         mBtn1.setOnClickListener(this);
@@ -67,6 +77,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.main_btn6:
                 Intent intent5 = new Intent(MainActivity.this, XiTuActivity.class);
                 startActivity(intent5);
+                break;
+            case R.id.main_btn7:
+                Intent intent6 = new Intent(MainActivity.this, TransA.class);
+                startActivity(intent6);
+                break;
+            case R.id.main_btn8:
+                Intent intent7 = new Intent(MainActivity.this, NotifiActivity.class);
+                startActivity(intent7);
                 break;
         }
     }

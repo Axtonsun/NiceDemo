@@ -3,7 +3,9 @@ package com.example.axtonsun.nicedemo.MVP;
 import android.app.ProgressDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.transition.Fade;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -14,7 +16,9 @@ import com.example.axtonsun.nicedemo.MVP.mvp.presenter.MainPresenter;
 import com.example.axtonsun.nicedemo.MVP.mvp.view.BaseView;
 import com.example.axtonsun.nicedemo.R;
 
-public class MvpActivity extends AppCompatActivity implements BaseView{
+import java.lang.reflect.Method;
+
+public class MvpActivity extends AppCompatActivity implements BaseView{//在Activity
     /**
      * http://www.cnblogs.com/xurui1995/p/6021209.html
      */
@@ -31,19 +35,23 @@ public class MvpActivity extends AppCompatActivity implements BaseView{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mvp);
 
+
+
         button = (Button) findViewById(R.id.search_btn);
         editText = (EditText) findViewById(R.id.ed_text);
         textView = (TextView) findViewById(R.id.tv);
         initView();
 
-        mainPresenter = new MainPresenter();
-
-        mainPresenter.attachView(this);
+        mainPresenter = new MainPresenter();//新建Presenter
+        mainPresenter.attachView(this);//将持有的view赋值
+        // mainPresenter = new MainPresenter(this);
 
         button.setOnClickListener(new View.OnClickListener() {
-            //当点击Button产生事件 将逻辑交给mainPresenter去处理 对应关系 V --->P
             @Override
             public void onClick(View v) {
+                // 通过new Presenter 实例绑定 通过Presenter中的公开方法请求数据
+                // 保留了 对 BasePresenter接口内方法的调用
+                //当点击Button产生事件 将逻辑交给mainPresenter去处理 对应关系 V --->P
                 mainPresenter.searchUser(editText.getText().toString());
             }
         });
@@ -56,6 +64,9 @@ public class MvpActivity extends AppCompatActivity implements BaseView{
         dialog.setMessage("正在搜索中");
     }
 
+    /**
+     * 调用数据  加载函数
+     */
     @Override
     public void showProgressDialog() {
         dialog.show();

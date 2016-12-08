@@ -22,6 +22,9 @@
         <activity android:name=".MVP.MvpActivity" />
         <activity android:name=".TabLayoutTop.TabLayoutTopActivity" />
         <activity android:name=".Palette.PaletteActivity" />
+        <activity android:name=".TransActivity.TransA"/>
+        <activity android:name=".TransActivity.TransB"/>
+        <activity android:name=".Notification.NotifiActivity"/>
         <activity android:name=".XituActivity.XiTuActivity"></activity>
     </application>
 

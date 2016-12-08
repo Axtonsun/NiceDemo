@@ -4,8 +4,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.transition.Explode;
+import android.transition.Slide;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -26,10 +29,13 @@ public class RvSuspensionBar extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_rv_suspension_bar);
         mSuspensionBar = (RelativeLayout) findViewById(R.id.suspension_bar);
         mSuspensionTv = (TextView) findViewById(R.id.tv_nickname);
         mSuspensionIv = (ImageView) findViewById(R.id.iv_avatar);
+
+
 
         final LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         final SuspensionAdapter adapter = new SuspensionAdapter();

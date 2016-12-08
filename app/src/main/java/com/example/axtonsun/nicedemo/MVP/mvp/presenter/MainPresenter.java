@@ -12,19 +12,24 @@ import rx.Subscriber;
  * Created by AxtonSun on 2016/11/17.
  */
 
-public class MainPresenter implements BasePresenter{
+public class MainPresenter implements BasePresenter{//实现Presenter接口 完善方法
 
-    // MainPresenter 使用了 Model 的方法  即 P ---> M
-
-    private BaseView mMainView;
-    private MainModel mModle;
+    private BaseView mMainView;//包含一个View
+    private MainModel mModle;//依赖Model
 
     public MainPresenter() {
         mModle = new MainModel();
     }
+    //public MainPresenter(BaseView view){//构造方法中传递的对象绑定  MvpActivity中的接口方法传递数据
+    // this.mMainView = view;
+    // }
 
+    /**
+     * 完善方法
+     * @param view
+     */
     @Override
-    public void attachView(BaseView view) {
+    public void attachView(BaseView view) {//把View传入
         mMainView = view;
     }
 
@@ -33,6 +38,10 @@ public class MainPresenter implements BasePresenter{
         mMainView = null;
     }
 
+    /**
+     * 并在方法中通过View更新数据
+     * @param loginName
+     */
     @Override
     public void searchUser(String loginName) {
         if (TextUtils.isEmpty(loginName.trim())) {
@@ -40,11 +49,14 @@ public class MainPresenter implements BasePresenter{
             return;
         }
         if (mModle!=null){
-            //用RxJava的观察者观察结果   再去调用View的方法刷新界面 即  P--->V
+            // 调用 M的方法 传 参
+            // MainPresenter 使用了 Model 的方法  即 P ---> M
             mModle.getUser(new Subscriber<User>() {
                 @Override
                 public void onStart() {//先显示对话框
                     super.onStart();
+                    //通过构造中传递的对象绑定 MvpActivity中的接口方法传递数据
+                    //用RxJava的观察者观察结果   再去调用View的方法刷新界面 即  P--->V
                     mMainView.showProgressDialog();
                 }
 

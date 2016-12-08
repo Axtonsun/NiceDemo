@@ -16,6 +16,12 @@ import com.example.axtonsun.nicedemo.MVP.Bean.User;
  * 3.将业务事件交由presenter处理
  *
  * View层 不存储数据 不与Modek层交互
+ *
+ *
+ * 对于View的接口，去观察功能上的操作，然后考虑：
+ * 该操作需要什么？（getUserName, getPassword）
+ * 该操作的结果，对应的反馈？(toMainActivity, showFailedError)
+ * 该操作过程中对应的友好的交互？(showLoading, hideLoading)
  */
 
 public interface BaseView {
